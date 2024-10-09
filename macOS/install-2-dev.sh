@@ -18,3 +18,6 @@ echo "##################"
 echo "# Install vscode #"
 echo "##################"
 brew install --cask visual-studio-code
+
+
+brew install awscli
