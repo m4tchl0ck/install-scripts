@@ -55,4 +55,5 @@ brew install pinentry-mac
 brew install --cask hammerspoon
 brew install --cask miro
 brew install --cask obsidian      
-brew install --cask spotify 
+brew install --cask spotify
+brew install --cask wins
