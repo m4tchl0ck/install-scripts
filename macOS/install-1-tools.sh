@@ -58,4 +58,5 @@ brew install --cask spotify
 brew install pinentry-mac
 brew install --cask hammerspoon
 brew install --cask wins
-brew install --cask alt-tab	
+brew install --cask alt-tab
+brew install --cask shottr
