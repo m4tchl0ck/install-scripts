@@ -51,9 +51,11 @@ echo '################'
 brew install --cask microsoft-edge
 
 
-brew install pinentry-mac
-brew install --cask hammerspoon
 brew install --cask miro
 brew install --cask obsidian      
 brew install --cask spotify
+
+brew install pinentry-mac
+brew install --cask hammerspoon
 brew install --cask wins
+brew install --cask alt-tab	
