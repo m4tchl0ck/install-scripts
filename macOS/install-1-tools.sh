@@ -60,3 +60,5 @@ brew install --cask hammerspoon
 brew install --cask wins
 brew install --cask alt-tab
 brew install --cask shottr
+
+brew install --cask chatgpt
