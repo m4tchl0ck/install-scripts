@@ -62,3 +62,5 @@ brew install --cask alt-tab
 brew install --cask shottr
 
 brew install --cask chatgpt
+brew install --cask discord
+brew install --cask bitwarden
