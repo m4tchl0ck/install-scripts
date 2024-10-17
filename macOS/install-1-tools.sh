@@ -64,3 +64,5 @@ brew install --cask shottr
 brew install --cask chatgpt
 brew install --cask discord
 brew install --cask bitwarden
+
+brew install --cask openvpn-connect
