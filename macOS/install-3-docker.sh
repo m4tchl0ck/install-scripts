@@ -1,7 +1,8 @@
 #/bin/sh
 ./update.sh
 
-# brew install docker
+# brew install --cask docker
+
 brew install podman
 
 podman machine init
