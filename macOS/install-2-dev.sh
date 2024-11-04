@@ -19,5 +19,9 @@ echo "# Install vscode #"
 echo "##################"
 brew install --cask visual-studio-code
 
+echo "##################"
+echo "# Install rider #"
+echo "##################"
+brew install --cask rider
 
 brew install awscli
