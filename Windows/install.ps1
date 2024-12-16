@@ -19,3 +19,5 @@ winget install RedHat.Podman-Desktop
 # In the Compose tile, click Setup, and follow the prompts.
 
 winget install Microsoft.DotNet.SDK.9
+
+winget install -e --id suse.RancherDesktop
