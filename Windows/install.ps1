@@ -23,3 +23,4 @@ winget install Microsoft.DotNet.SDK.9
 winget install -e --id SUSE.RancherDesktop
 winget install -e --id Amazon.AWSCLI
 winget install -e --id GnuPG.Gpg4win
+winget install -e --id Git.Git
