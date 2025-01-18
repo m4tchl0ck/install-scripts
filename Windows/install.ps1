@@ -26,3 +26,5 @@ winget install -e --id GnuPG.Gpg4win
 winget install -e --id Git.Git
 
 winget install -e --id Bitwarden.Bitwarden
+
+winget install --id=Miro.Miro  -e
