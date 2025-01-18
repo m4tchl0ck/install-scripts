@@ -66,3 +66,5 @@ brew install --cask discord
 brew install --cask bitwarden
 
 brew install --cask openvpn-connect
+
+brew install --cask surfshark
