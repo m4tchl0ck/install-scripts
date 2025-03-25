@@ -22,3 +22,11 @@ chmod +x /tmp/dotnet-install.sh
 
 echo 'export PATH=$HOME/.dotnet:$PATH' >> $HOME/.zshrc
 echo 'export DOTNET_ROOT=$HOME/.dotnet' >> $HOME/.zshrc
+
+
+echo "##################"
+echo "# Install awscli #"
+echo "##################"
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/awscliv2.zip"
+unzip /tmp/awscliv2.zip -d /tmp/awscliv2-install
+sudo /tmp/awscliv2-install/aws/install
