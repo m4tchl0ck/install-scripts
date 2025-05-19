@@ -4,7 +4,7 @@
 sudo add-apt-repository ppa:wslutilities/wslu
 sudo apt update
 sudo apt install wslu
-echo "BROWSER=wslview" >> $HOME/.zshrc
+echo "export BROWSER=wslview" >> $HOME/.zshrc
 # Podman
 # https://github.com/containers/podman/releases/latest
 wget https://github.com/containers/podman/releases/download/v4.9.1/podman-remote-static-linux_amd64.tar.gz
