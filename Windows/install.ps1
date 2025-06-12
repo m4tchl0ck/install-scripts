@@ -28,3 +28,4 @@ winget install -e --id Git.Git
 winget install -e --id Bitwarden.Bitwarden
 
 winget install --id=Miro.Miro  -e
+winget install -e --id Discord.Discord
