@@ -11,7 +11,7 @@ echo '##################'
 && sudo apt update \
 && sudo apt install -y gh
 
-#cp ~/.giconfig
+#cp ~/.gitconfig
 sudo add-apt-repository ppa:wslutilities/wslu
 sudo apt update
 sudo apt install wslu
