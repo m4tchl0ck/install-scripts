@@ -11,6 +11,8 @@ echo '##################'
 && sudo apt update \
 && sudo apt install -y gh
 
+gh auth login 
+
 #cp ~/.gitconfig
 sudo add-apt-repository ppa:wslutilities/wslu
 sudo apt update
