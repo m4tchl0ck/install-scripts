@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# wsl --install Ubuntu-24.04
 echo '##################'
 echo '# Install gh-cli #'
 echo '##################'
