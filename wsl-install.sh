@@ -1,4 +1,10 @@
 #!/bin/sh
+
+sudo add-apt-repository ppa:wslutilities/wslu
+sudo apt update
+sudo apt install wslu
+echo "export BROWSER=wslview" >> $HOME/.zshrc
+
 # wsl --install Ubuntu-24.04
 echo '##################'
 echo '# Install gh-cli #'
@@ -14,10 +20,6 @@ echo '##################'
 gh auth login 
 
 #cp ~/.gitconfig
-sudo add-apt-repository ppa:wslutilities/wslu
-sudo apt update
-sudo apt install wslu
-echo "export BROWSER=wslview" >> $HOME/.zshrc
 
 # Install WSL plugin in VSCode
 
