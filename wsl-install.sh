@@ -19,7 +19,8 @@ echo '##################'
 
 gh auth login 
 
-#cp ~/.gitconfig
+# cp ~/.gitconfig
+# configure gpg
 
 # Install WSL plugin in VSCode
 
