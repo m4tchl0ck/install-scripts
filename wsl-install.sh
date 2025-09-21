@@ -38,6 +38,12 @@ git config --global gpg.program gpg
 git config --global user.signingkey <YourKeyID>
 git config --global commit.gpgsign true
 
+# Alternatic
+# Install npiperelay on Windows.
+# In WSL, create a Unix socket that forwards to the Windows named pipe:
+#socat UNIX-LISTEN:$HOME/.gnupg/S.gpg-agent,fork EXEC:"npiperelay.exe -ei -s //./pipe/S.gpg-agent"
+# Point WSL GPG to that socket.
+
 # cp ~/.gitconfig
 # configure gpg
 
