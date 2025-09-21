@@ -19,6 +19,25 @@ echo '##################'
 
 gh auth login 
 
+echo '##########################'
+echo '# Setup gpg from Windows #'
+echo '##########################'
+# Run on Windows
+gpg --armor --export-secret-keys <YourKeyID> > C:\Users\<YourUser>\private.key
+# Run on WSL
+cp /mnt/c/Users/<YourUser>/private.key ~/
+gpg --import ~/private.key
+gpg --edit-key <YourKeyID>
+# In gpg interactive
+trust
+# pick 5 = ultimate
+quit
+
+# Run on WSL
+git config --global gpg.program gpg
+git config --global user.signingkey <YourKeyID>
+git config --global commit.gpgsign true
+
 # cp ~/.gitconfig
 # configure gpg
 
