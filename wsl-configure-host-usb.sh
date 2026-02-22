@@ -47,7 +47,7 @@ success "systemd is active."
 # --- 3. Install PCSC packages -------------------------------------------------
 echo ""
 info "Checking required packages..."
-PACKAGES=(pcscd pcsc-tools libccid)
+PACKAGES=(pcscd pcsc-tools libccid pinentry-tty)
 MISSING=()
 for pkg in "${PACKAGES[@]}"; do
     dpkg -s "$pkg" &>/dev/null || MISSING+=("$pkg")
@@ -102,7 +102,44 @@ else
     error "pcscd.socket failed to start. Check: sudo journalctl -u pcscd.socket --no-pager -n 20"
 fi
 
-# --- 7. Summary ---------------------------------------------------------------
+# --- 7. GPG pinentry configuration --------------------------------------------
+echo ""
+info "Configuring GPG pinentry for YubiKey..."
+GNUPG_DIR="$HOME/.gnupg"
+AGENT_CONF="$GNUPG_DIR/gpg-agent.conf"
+
+mkdir -p "$GNUPG_DIR"
+chmod 700 "$GNUPG_DIR"
+
+# Set pinentry-program
+if grep -qs "^pinentry-program" "$AGENT_CONF" 2>/dev/null; then
+    sed -i 's|^pinentry-program .*|pinentry-program /usr/bin/pinentry-tty|' "$AGENT_CONF"
+    success "Updated pinentry-program in $AGENT_CONF"
+else
+    echo "pinentry-program /usr/bin/pinentry-tty" >> "$AGENT_CONF"
+    success "Set pinentry-program /usr/bin/pinentry-tty in $AGENT_CONF"
+fi
+
+# Ensure allow-loopback-pinentry is present
+if ! grep -qs "^allow-loopback-pinentry" "$AGENT_CONF" 2>/dev/null; then
+    echo "allow-loopback-pinentry" >> "$AGENT_CONF"
+fi
+
+# Add GPG_TTY export to shell rc files
+for RC in "$HOME/.zshrc" "$HOME/.bashrc"; do
+    if [ -f "$RC" ] && ! grep -qs "GPG_TTY" "$RC"; then
+        printf '\nexport GPG_TTY=$(tty)\n' >> "$RC"
+        success "Added GPG_TTY export to $RC"
+    elif [ -f "$RC" ]; then
+        success "GPG_TTY already set in $RC"
+    fi
+done
+
+# Reload gpg-agent to pick up new config
+gpgconf --kill gpg-agent 2>/dev/null || true
+success "GPG pinentry configured (pinentry-tty). Restart your shell or run: export GPG_TTY=\$(tty)"
+
+# --- 8. Summary ---------------------------------------------------------------
 echo ""
 echo "============================================"
 success "Configuration complete."
